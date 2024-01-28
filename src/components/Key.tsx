@@ -46,7 +46,7 @@ export default function Key({ value, children, className = "" }: KeyProps) {
       className={
         className +
         backGroundColor +
-        " flex min-h-[50px] min-w-[30px] items-center justify-center rounded px-2 py-4 text-lg font-bold capitalize md:min-h-[60px] md:min-w-[40px] md:text-xl"
+        " flex min-h-[50px] min-w-[30px] items-center justify-center rounded px-2 py-3 text-lg font-bold capitalize md:min-h-[60px] md:py-4 md:min-w-[40px] md:text-xl"
       }
       onClick={handleClick}
     >
