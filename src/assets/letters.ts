@@ -1,4 +1,4 @@
-export const LETTERS = [
+export const LETTERS : string[] = [
   "q",
   "w",
   "e",
