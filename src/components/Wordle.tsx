@@ -3,11 +3,19 @@ import { useWordleActions } from "../hooks/useWordleActions";
 
 import Keyboard from "./Keyboard";
 import Row from "./Row";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import toast from "react-hot-toast";
 
 export default function Wordle() {
   const { handleEnterClick, handleBackSpaceClick, handleLetterClick } =
     useWordleActions();
-
+  const isFound = useSelector((state: RootState) => state.isFound);
+  useEffect(() => {
+    if (isFound) {
+      toast.success("You found the word 🎉");
+    }
+  }, [isFound]);
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       switch (e.key) {
