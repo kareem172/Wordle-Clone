@@ -1,7 +1,11 @@
 import toast from "react-hot-toast";
-import { HiCog, HiMoon, HiOutlineUser } from "react-icons/hi";
+import { BiReset } from "react-icons/bi";
+import { HiMoon, HiOutlineUser } from "react-icons/hi";
+import { useDispatch } from "react-redux";
+import { reset } from "../features/wordleSlice";
 
 export default function Header() {
+  const dispatcher = useDispatch();
   return (
     <nav className="grid grid-cols-3 border-b-[1px] border-light/20 p-4">
       <button
@@ -24,10 +28,10 @@ export default function Header() {
         </li>
         <li>
           <button
-            title="Settings"
-            onClick={() => toast("This Feature will be implemented soon ⏳")}
+            title="Reset Game"
+            onClick={() => dispatcher(reset())}
           >
-            <HiCog size={30} />
+            <BiReset size={30} />
           </button>
         </li>
       </ul>
